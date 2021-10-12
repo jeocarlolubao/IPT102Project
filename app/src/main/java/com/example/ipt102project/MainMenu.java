@@ -38,6 +38,15 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
+        NoboButton_About.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent movetoAbout = new Intent(MainMenu.this, About.class);
+                MainMenu.this.startActivity(movetoAbout);
+                MainMenu.this.finish();
+            }
+        });
+
 
 
     }

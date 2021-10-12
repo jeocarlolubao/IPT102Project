@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IPT102Project">
-        <activity android:name=".FoodMenu"></activity>
+        <activity android:name=".SetOrders"></activity>
+        <activity android:name=".About" />
+        <activity android:name=".FoodMenu" />
 
         <meta-data
             android:name="com.google.android.actions"
