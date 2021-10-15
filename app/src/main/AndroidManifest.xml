@@ -3,15 +3,16 @@
     package="com.example.ipt102project">
 
     <application
-        android:allowBackup="true"
+        android:fullBackupOnly="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IPT102Project">
-        <activity android:name=".SetOrders"></activity>
+        <activity android:name=".SetOrders"/>
         <activity android:name=".About" />
-        <activity android:name=".FoodMenu" />
+        <activity android:name=".FoodMenu"
+            />
 
         <meta-data
             android:name="com.google.android.actions"

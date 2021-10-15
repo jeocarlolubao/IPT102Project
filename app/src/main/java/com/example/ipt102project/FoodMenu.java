@@ -1,6 +1,8 @@
 package com.example.ipt102project;
 
-public class FoodMenu {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class FoodMenu extends AppCompatActivity {
 
     private String textView_foodName, imageView_foodImage;
 

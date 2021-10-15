@@ -14,6 +14,7 @@
         tools:layout_editor_absoluteY="-218dp">
 
         <ImageView
+            android:contentDescription="onlymilkteaLogoMain"
             android:id="@+id/imageView3"
             android:layout_width="320dp"
             android:layout_height="102dp"
@@ -109,6 +110,27 @@
             app:nb_radius="30dp"
             app:nb_text="About"
             app:nb_textColor="#FFF">
+
+        </com.ornach.nobobutton.NoboButton>
+
+        <com.ornach.nobobutton.NoboButton
+            android:id="@+id/NoboButton_CustomerDetails"
+            android:layout_width="200dp"
+            android:layout_height="66dp"
+            android:layout_below="@+id/NoboButton_About"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="330dp"
+            android:padding="10dp"
+            android:visibility="visible"
+            app:nb_backgroundColor="#00AEF0"
+            app:nb_borderColor="#FFFFFF"
+            app:nb_borderWidth="20dp"
+            app:nb_focusColor="#FFFFFF"
+            app:nb_fontIcon="&#xf291;"
+            app:nb_radius="0dp"
+            app:nb_text="Delivery Info"
+            app:nb_textColor="#FFF"
+            android:layout_marginStart="120dp">
 
         </com.ornach.nobobutton.NoboButton>
 

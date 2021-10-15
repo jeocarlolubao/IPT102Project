@@ -15,6 +15,7 @@ public class MainMenu extends AppCompatActivity {
     NoboButton NoboButton_CreateOrder;
     NoboButton NoboButton_OrdersMade;
     NoboButton NoboButton_About;
+    NoboButton NoboButton_CustomerDetails;
 
 
     @Override
@@ -26,28 +27,47 @@ public class MainMenu extends AppCompatActivity {
         NoboButton_CreateOrder = findViewById(R.id.NoboButton_CreateOrder);
         NoboButton_OrdersMade = findViewById(R.id.NoboButton_OrdersMade);
         NoboButton_About = findViewById(R.id.NoboButton_About);
+        NoboButton_CustomerDetails = findViewById(R.id.NoboButton_CustomerDetails);
 
         NoboButton_CreateOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent movetoFoodMenu = new Intent(MainMenu.this, FoodMenu.class);
-                MainMenu.this.startActivity(movetoFoodMenu);
-                MainMenu.this.finish();
+                CreateOrderWindow();
 
 
             }
+
+            private void CreateOrderWindow() {
+                Intent movetoFoodMenu = new Intent(MainMenu.this, FoodMenu.class);
+                startActivity(movetoFoodMenu);
+
+            }
+
         });
 
         NoboButton_About.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent movetoAbout = new Intent(MainMenu.this, About.class);
-                MainMenu.this.startActivity(movetoAbout);
-                MainMenu.this.finish();
+                AboutWindow();
+
             }
+            public  void AboutWindow(){
+                Intent movetoAbout = new Intent(MainMenu.this, About.class);
+                startActivity(movetoAbout);
+            }
+
         });
+        NoboButton_CustomerDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomerDetailsWindow();
 
+            }
+            public  void CustomerDetailsWindow(){
+                Intent movetoCustomerDetails = new Intent(MainMenu.this, CustomerDetails.class);
+                startActivity(movetoCustomerDetails);
+            }
 
-
+        });
     }
 }
