@@ -1,5 +1,6 @@
 package com.example.ipt102project;
 
+import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,21 +16,19 @@ public class SetOrders extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_orders);
 
-        FoodMenu model = new FoodMenu();
-        ArrayList<FoodMenu> list = new ArrayList<FoodMenu>();
 
-        model.setTextView_foodName("some dummy data");
-        model.setImageView_foodImage("some dummy data");
+        //  FoodMenuData(String FoodMenu_foodname, int imgID, double FoodMenu_foodprice)
+        FoodMenuData[] myListData = new FoodMenuData[] {
+                //TODO: FIX THIS SHIT TO SEE IMAGES
+                new FoodMenuData("Food1" , getResources().getDrawable(R.drawable.only_milktea), 12.2),
+                new FoodMenuData("Food2" , getResources().getDrawable(R.drawable.only_milktea), 15.23),
+                new FoodMenuData("Food3" , getResources().getDrawable(R.drawable.only_milktea), 15.23),
+        };
 
-        list.add(model);
-
-        RecyclerView recycler_view = (RecyclerView) findViewById(R.id.recycler_view_SetOrders);
-
-
-        // use this if you want the RecyclerView to look like a vertical list view
-        recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-
-        FoodMenuAdapter adapter = new FoodMenuAdapter(list, this);
-        recycler_view.setAdapter(adapter);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerView_FoodMenu);
+        FoodMenuAdapter adapter = new FoodMenuAdapter(myListData);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
     }
 }

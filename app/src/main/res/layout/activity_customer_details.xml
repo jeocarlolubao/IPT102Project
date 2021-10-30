@@ -39,9 +39,9 @@
         android:layout_below="@+id/txtFirstName"
         android:layout_marginLeft="18dp"
         android:ems="10"
+        android:hint="input FirstName"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="input FirstName"
         android:textSize="12sp" />
     <TextView
         android:id="@+id/txtLastName"
@@ -61,9 +61,9 @@
         android:layout_below="@+id/txtLastName"
         android:layout_marginLeft="200dp"
         android:ems="10"
+        android:hint="input LastName"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="input LastName"
         android:textSize="12sp" />
 
     <TextView
@@ -84,9 +84,9 @@
         android:layout_below="@+id/txtStreetAddress"
         android:layout_marginLeft="19dp"
         android:ems="10"
+        android:hint="input StreetAddress"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="input StreetAddress"
         android:textSize="12sp" />
 
     <TextView

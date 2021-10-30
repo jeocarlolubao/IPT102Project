@@ -1,84 +1,62 @@
 package com.example.ipt102project;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.MainThread;
-import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.ViewHolder> {
+    private FoodMenuData[] listdata;
 
-public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.Viewholder>{
-
-    private ArrayList<FoodMenu> data;
-    private FoodMenu model;
-    private Context context;
-
-    public FoodMenuAdapter(ArrayList<FoodMenu> data, Context context) {
-        this.data = data;
-        this.context = context;
+    public FoodMenuAdapter(FoodMenuData[] listdata) {
+        this.listdata = listdata;
+    }
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View listItem= layoutInflater.inflate(R.layout.recycler_view_item, parent, false);
+        ViewHolder viewHolder = new ViewHolder(listItem);
+        return viewHolder;
     }
 
-    public class Viewholder extends RecyclerView.ViewHolder {
-
-        // 1. Declare your Views here
-
-        public TextView textView_foodName;
-        public ImageView imageView_foodImage;
-
-
-        public Viewholder(@NonNull View itemView) {
-            super(itemView);
-
-            // 2. Define your Views here
-
-            textView_foodName = (TextView) itemView.findViewById(R.id.textView_foodName);
-            imageView_foodImage = (ImageView) itemView.findViewById(R.id.imageView_foodImage);
-
-        }
-
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        final FoodMenuData myListData = listdata[position];
+        holder.foodName.setText(listdata[position].getFoodMenu_foodname());
+        holder.foodPrice.setText(String.valueOf(listdata[position].getFoodMenu_foodprice()));
+        //holder.foodImage.setImageResource(listdata[position].getImgID());
     }
-
-
-        @Override
-        public  FoodMenuAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.activity_set_orders, parent, false);
-
-            return new Viewholder(itemView);
-        }
-
-        @Override
-        public void onBindViewHolder(Viewholder holder, int position) {
-
-            model = data.get(position);
-
-            // 3. set the data to your Views here
-
-            /**
-             *
-             The format to set data should be like this example:
-             --------------------------------------
-             holder.txvName.setText(model.getName());
-             *
-             */
-
-            holder.textView_foodName.setText("Food #1");
-            holder.textView_foodName.setText("Food #2");
-            //TODO: APPEND IMAGE FOR RECYCLERVIEW
-
-        }
-
 
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return listdata.length;
     }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public ImageView foodImage;
+        public TextView foodName;
+        public TextView foodPrice;
+        public ConstraintLayout constraintLayout;
+        public LinearLayout linearLayout;
+        public ViewHolder(View itemView) {
+            super(itemView);
+            // SET IMAGES
+            this.foodImage = (ImageView) itemView.findViewById(R.id.ImageView_FoodMenu_foodimage);
+            // SET FOOD NAMES
+            this.foodName = (TextView) itemView.findViewById(R.id.textView_FoodMenu_foodname);
+            // SET FOOD PRICE
+            this.foodPrice = (TextView) itemView.findViewById(R.id.textView_FoodMenu_foodprice);
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.LinearLayout_FoodMenuLinearLayout);
+            constraintLayout = (ConstraintLayout) itemView.findViewById(R.id.ConstraintLayout_foodMenuConstraintLayout);
+        }
+    }
+
 
 }

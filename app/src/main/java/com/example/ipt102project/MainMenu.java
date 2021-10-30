@@ -38,8 +38,8 @@ public class MainMenu extends AppCompatActivity {
             }
 
             private void CreateOrderWindow() {
-                Intent movetoFoodMenu = new Intent(MainMenu.this, FoodMenu.class);
-                startActivity(movetoFoodMenu);
+                Intent movetoSetorders = new Intent(MainMenu.this, SetOrders.class);
+                startActivity(movetoSetorders);
 
             }
 
