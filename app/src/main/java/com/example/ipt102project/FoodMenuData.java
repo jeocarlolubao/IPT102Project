@@ -10,7 +10,7 @@ public class FoodMenuData {
     private int imgID;
     private double FoodMenu_foodprice;
 
-    public FoodMenuData(String FoodMenu_foodname , Drawable imgID, double FoodMenu_foodprice){
+    public FoodMenuData(String FoodMenu_foodname , int imgID, double FoodMenu_foodprice){
         this.FoodMenu_foodname = FoodMenu_foodname;
         this.imgID = imgID;
         this.FoodMenu_foodprice = FoodMenu_foodprice;

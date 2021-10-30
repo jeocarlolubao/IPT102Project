@@ -20,7 +20,7 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.recycler_view_item, parent, false);
+        View listItem= layoutInflater.inflate(R.layout.activity_foodmenu_recyclerview, parent, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
         return viewHolder;
     }
@@ -30,7 +30,7 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.ViewHo
         final FoodMenuData myListData = listdata[position];
         holder.foodName.setText(listdata[position].getFoodMenu_foodname());
         holder.foodPrice.setText(String.valueOf(listdata[position].getFoodMenu_foodprice()));
-        //holder.foodImage.setImageResource(listdata[position].getImgID());
+        holder.foodImage.setImageResource(listdata[position].getImgID());
     }
 
 
@@ -43,18 +43,16 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.ViewHo
         public ImageView foodImage;
         public TextView foodName;
         public TextView foodPrice;
-        public ConstraintLayout constraintLayout;
-        public LinearLayout linearLayout;
+        public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
             // SET IMAGES
-            this.foodImage = (ImageView) itemView.findViewById(R.id.ImageView_FoodMenu_foodimage);
+            this.foodImage = (ImageView) itemView.findViewById(R.id.imageView_FoodMenu_foodimage);
             // SET FOOD NAMES
             this.foodName = (TextView) itemView.findViewById(R.id.textView_FoodMenu_foodname);
             // SET FOOD PRICE
             this.foodPrice = (TextView) itemView.findViewById(R.id.textView_FoodMenu_foodprice);
-            linearLayout = (LinearLayout) itemView.findViewById(R.id.LinearLayout_FoodMenuLinearLayout);
-            constraintLayout = (ConstraintLayout) itemView.findViewById(R.id.ConstraintLayout_foodMenuConstraintLayout);
+            relativeLayout = (RelativeLayout) itemView.findViewById(R.id.relativeLayout_FoodMenuRelativeLayout);
         }
     }
 
