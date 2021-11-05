@@ -27,7 +27,7 @@
             app:srcCompat="@drawable/only_milktea" />
 
         <com.ornach.nobobutton.NoboButton
-            android:id="@+id/NoboButton_CreateOrder"
+            android:id="@+id/NoboButton_MenuCreateOrder"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/imageView3"

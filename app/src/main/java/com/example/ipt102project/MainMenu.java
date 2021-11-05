@@ -24,7 +24,7 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        NoboButton_CreateOrder = findViewById(R.id.NoboButton_CreateOrder);
+        NoboButton_CreateOrder = findViewById(R.id.NoboButton_MenuCreateOrder);
         NoboButton_OrdersMade = findViewById(R.id.NoboButton_OrdersMade);
         NoboButton_About = findViewById(R.id.NoboButton_About);
         NoboButton_CustomerDetails = findViewById(R.id.NoboButton_CustomerDetails);

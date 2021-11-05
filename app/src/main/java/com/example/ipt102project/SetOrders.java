@@ -1,36 +1,196 @@
 package com.example.ipt102project;
 
-import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.work.Data;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.ornach.nobobutton.NoboButton;
+import com.shawnlin.numberpicker.NumberPicker;
 
 public class SetOrders extends AppCompatActivity {
 
+    NoboButton NoboButton_AddChocoMalt, NoboButton_AddJavaFrappe, NoboButton_AddGreenApple, NoboButton_AddTaro, NoboButton_ReviewOrder;
+    NumberPicker number_picker_ChocoMaltValue, number_picker_JavaChipValue, number_picker_GreenAppleValue, number_picker_TaroValue;
+
+    TextView textView_ChocoMaltPrice, textView_JavaChipPrice, textView_GreenApplePrice, textView_TaroPrice;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_orders);
+        getSupportActionBar().hide();
+
+        NoboButton_AddChocoMalt = findViewById(R.id.NoboButton_AddChocoMalt);
+        NoboButton_AddJavaFrappe = findViewById(R.id.NoboButton_AddJavaFrappe);
+        NoboButton_AddGreenApple = findViewById(R.id.NoboButton_AddGreenApple);
+        NoboButton_AddTaro = findViewById(R.id.NoboButton_AddTaro);
+        NoboButton_ReviewOrder = findViewById(R.id.NoboButton_ReviewOrder);
+
+        number_picker_ChocoMaltValue = findViewById(R.id.number_picker_ChocoMaltValue);
+        number_picker_JavaChipValue = findViewById(R.id.number_picker_JavaChipValue);
+        number_picker_GreenAppleValue = findViewById(R.id.number_picker_GreenAppleValue);
+        number_picker_TaroValue = findViewById(R.id.number_picker_TaroValue);
+
+        textView_ChocoMaltPrice = findViewById(R.id.textView_ChocoMaltPrice);
+        textView_JavaChipPrice = findViewById(R.id.textView_JavaChipPrice);
+        textView_GreenApplePrice = findViewById(R.id.textView_GreenApplePrice);
+        textView_TaroPrice = findViewById(R.id.textView_TaroPrice);
 
 
-        //  FoodMenuData(String FoodMenu_foodname, int imgID, double FoodMenu_foodprice)
-        FoodMenuData[] myListData = new FoodMenuData[] {
+        NoboButton_AddChocoMalt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (NoboButton_AddChocoMalt.getText().toString().equalsIgnoreCase("Add")) {
+                    NoboButton_AddChocoMalt.setText("Remove");
+                    NoboButton_AddChocoMalt.setBackgroundColor(Color.RED);
 
-                new FoodMenuData("Chocolate" , android.R.drawable.btn_star, 12.2),
-                new FoodMenuData("Mango" , android.R.drawable.btn_plus, 15.23),
-                new FoodMenuData("Milktea Flavor" , android.R.drawable.btn_dialog, 15.23),
-        };
+                    number_picker_ChocoMaltValue.setVisibility(View.VISIBLE);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerView_FoodMenu);
-        FoodMenuAdapter adapter = new FoodMenuAdapter(myListData);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
+                } else {
+                    NoboButton_AddChocoMalt.setText("Add");
+                    NoboButton_AddChocoMalt.setBackgroundColor(Color.rgb(0, 174, 240));
+
+                    number_picker_ChocoMaltValue.setValue(0);
+                    number_picker_ChocoMaltValue.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        NoboButton_AddJavaFrappe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (NoboButton_AddJavaFrappe.getText().toString().equalsIgnoreCase("Add")) {
+                    NoboButton_AddJavaFrappe.setText("Remove");
+                    NoboButton_AddJavaFrappe.setBackgroundColor(Color.RED);
+
+                    number_picker_JavaChipValue.setVisibility(View.VISIBLE);
+
+                } else {
+                    NoboButton_AddJavaFrappe.setText("Add");
+                    NoboButton_AddJavaFrappe.setBackgroundColor(Color.rgb(0, 174, 240));
+
+                    number_picker_JavaChipValue.setValue(0);
+                    number_picker_JavaChipValue.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        NoboButton_AddGreenApple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (NoboButton_AddGreenApple.getText().toString().equalsIgnoreCase("Add")) {
+                    NoboButton_AddGreenApple.setText("Remove");
+                    NoboButton_AddGreenApple.setBackgroundColor(Color.RED);
+
+                    number_picker_GreenAppleValue.setVisibility(View.VISIBLE);
+                } else {
+                    NoboButton_AddGreenApple.setText("Add");
+                    NoboButton_AddGreenApple.setBackgroundColor(Color.rgb(0, 174, 240));
+
+                    number_picker_GreenAppleValue.setValue(0);
+                    number_picker_GreenAppleValue.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        NoboButton_AddTaro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (NoboButton_AddTaro.getText().toString().equalsIgnoreCase("Add")) {
+                    NoboButton_AddTaro.setText("Remove");
+                    NoboButton_AddTaro.setBackgroundColor(Color.RED);
+
+                    number_picker_TaroValue.setVisibility(View.VISIBLE);
+                } else {
+                    NoboButton_AddTaro.setText("Add");
+                    NoboButton_AddTaro.setBackgroundColor(Color.rgb(0, 174, 240));
+
+                    number_picker_TaroValue.setValue(0);
+                    number_picker_TaroValue.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+
+        NoboButton_ReviewOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+
+                int getChocoMaltQty = number_picker_ChocoMaltValue.getValue();
+                double ChocoMaltPrice = Double.parseDouble(textView_GreenApplePrice.getText().toString());
+
+                //sub total for item 1
+                double ChocoMaltTotal;
+
+                if (NoboButton_AddChocoMalt.getText().toString().equalsIgnoreCase("Add")) {
+                    ChocoMaltTotal = 0;
+                } else {
+                    ChocoMaltTotal = getChocoMaltQty * ChocoMaltPrice;
+                }
+
+
+                bundle.putDouble("ChocoMaltTotal", ChocoMaltTotal);
+                bundle.putInt("ChocoMaltQty", getChocoMaltQty);
+                bundle.putDouble("ChocoMaltPrice", ChocoMaltPrice);
+
+                int getJavaChipQty = number_picker_JavaChipValue.getValue();
+                double JavaChipPrice = Double.parseDouble(textView_JavaChipPrice.getText().toString());
+
+                double JavaChipTotal;
+
+                if (NoboButton_AddJavaFrappe.getText().toString().equalsIgnoreCase("Add")) {
+                    JavaChipTotal = 0;
+                } else {
+                    JavaChipTotal = JavaChipPrice * getJavaChipQty;
+                }
+
+
+                bundle.putDouble("JavaChipTotal", JavaChipTotal);
+                bundle.putInt("JavaChipQty", getJavaChipQty);
+                bundle.putDouble("JavaChipPrice", JavaChipPrice);
+
+                int getGreenAppleQty = number_picker_GreenAppleValue.getValue();
+                double GreenApplePrice = Double.parseDouble(textView_GreenApplePrice.getText().toString());
+
+                double GreenAppleTotal;
+
+                if (NoboButton_AddGreenApple.getText().toString().equalsIgnoreCase("Add")) {
+                    GreenAppleTotal = 0;
+                } else {
+                    GreenAppleTotal = getGreenAppleQty * GreenApplePrice;
+                }
+
+                bundle.putDouble("GreenAppleTotal", GreenAppleTotal);
+                bundle.putInt("GreenAppleQty", getGreenAppleQty);
+                bundle.putDouble("GreenApplePrice", GreenApplePrice);
+
+
+                int getTaroQty = number_picker_TaroValue.getValue();
+                double TaroPrice = Double.parseDouble(textView_TaroPrice.getText().toString());
+
+                double TaroTotal;
+
+                if (NoboButton_AddTaro.getText().toString().equalsIgnoreCase("Add")) {
+                    TaroTotal = 0;
+                } else {
+                    TaroTotal = getTaroQty * TaroPrice;
+                }
+
+                bundle.putDouble("TaroTotal", TaroTotal);
+                bundle.putInt("TaroQty", getTaroQty);
+                bundle.putDouble("TaroPrice", TaroPrice);
+
+                Intent intent = new Intent(getApplicationContext(), ListOrders.class);
+                intent.putExtras(bundle);
+
+
+
+                startActivity(intent);
+
+            }
+        });
+
     }
 }

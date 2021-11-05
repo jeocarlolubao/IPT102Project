@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IPT102Project">
-        <activity android:name=".RecyclerView_ItemView"></activity>
-        <activity android:name=".SetOrders" />
+        <activity android:name=".SetOrders"></activity>
+        <activity android:name=".RecyclerView_ItemView" />
+        <activity android:name=".ListOrders" />
         <activity android:name=".About" />
         <activity android:name=".FoodMenu" />
 
