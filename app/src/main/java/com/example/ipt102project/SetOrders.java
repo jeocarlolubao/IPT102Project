@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.ornach.nobobutton.NoboButton;
@@ -17,6 +18,7 @@ public class SetOrders extends AppCompatActivity {
     NumberPicker number_picker_ChocoMaltValue, number_picker_JavaChipValue, number_picker_GreenAppleValue, number_picker_TaroValue;
 
     TextView textView_ChocoMaltPrice, textView_JavaChipPrice, textView_GreenApplePrice, textView_TaroPrice;
+    CheckBox checkBox_ChocoMaltPearls, checkBox_JavaChipPearls, checkBox_GreenApplePearls, checkBox_TaroPearls;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,11 @@ public class SetOrders extends AppCompatActivity {
         textView_TaroPrice = findViewById(R.id.textView_TaroPrice);
 
 
+        checkBox_ChocoMaltPearls = findViewById(R.id.checkBox_ChocoMaltPearls);
+        checkBox_JavaChipPearls = findViewById(R.id.checkBox_JavaChipPearls);
+        checkBox_GreenApplePearls = findViewById(R.id.checkBox_GreenApplePearls);
+        checkBox_TaroPearls = findViewById(R.id.checkBox_TaroPearls);
+
         NoboButton_AddChocoMalt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,12 +57,16 @@ public class SetOrders extends AppCompatActivity {
 
                     number_picker_ChocoMaltValue.setVisibility(View.VISIBLE);
 
+                    checkBox_ChocoMaltPearls.setVisibility(View.VISIBLE);
+
                 } else {
                     NoboButton_AddChocoMalt.setText("Add");
                     NoboButton_AddChocoMalt.setBackgroundColor(Color.rgb(0, 174, 240));
 
                     number_picker_ChocoMaltValue.setValue(0);
                     number_picker_ChocoMaltValue.setVisibility(View.INVISIBLE);
+
+                    checkBox_ChocoMaltPearls.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -68,12 +79,16 @@ public class SetOrders extends AppCompatActivity {
 
                     number_picker_JavaChipValue.setVisibility(View.VISIBLE);
 
+                    checkBox_JavaChipPearls.setVisibility(View.VISIBLE);
+
                 } else {
                     NoboButton_AddJavaFrappe.setText("Add");
                     NoboButton_AddJavaFrappe.setBackgroundColor(Color.rgb(0, 174, 240));
 
                     number_picker_JavaChipValue.setValue(0);
                     number_picker_JavaChipValue.setVisibility(View.INVISIBLE);
+
+                    checkBox_JavaChipPearls.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -85,12 +100,16 @@ public class SetOrders extends AppCompatActivity {
                     NoboButton_AddGreenApple.setBackgroundColor(Color.RED);
 
                     number_picker_GreenAppleValue.setVisibility(View.VISIBLE);
+
+                    checkBox_GreenApplePearls.setVisibility(View.VISIBLE);
                 } else {
                     NoboButton_AddGreenApple.setText("Add");
                     NoboButton_AddGreenApple.setBackgroundColor(Color.rgb(0, 174, 240));
 
                     number_picker_GreenAppleValue.setValue(0);
                     number_picker_GreenAppleValue.setVisibility(View.INVISIBLE);
+
+                    checkBox_GreenApplePearls.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -102,12 +121,16 @@ public class SetOrders extends AppCompatActivity {
                     NoboButton_AddTaro.setBackgroundColor(Color.RED);
 
                     number_picker_TaroValue.setVisibility(View.VISIBLE);
+
+                    checkBox_TaroPearls.setVisibility(View.VISIBLE);
                 } else {
                     NoboButton_AddTaro.setText("Add");
                     NoboButton_AddTaro.setBackgroundColor(Color.rgb(0, 174, 240));
 
                     number_picker_TaroValue.setValue(0);
                     number_picker_TaroValue.setVisibility(View.INVISIBLE);
+
+                    checkBox_TaroPearls.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -127,13 +150,19 @@ public class SetOrders extends AppCompatActivity {
                 if (NoboButton_AddChocoMalt.getText().toString().equalsIgnoreCase("Add")) {
                     ChocoMaltTotal = 0;
                 } else {
-                    ChocoMaltTotal = getChocoMaltQty * ChocoMaltPrice;
+                    if (checkBox_ChocoMaltPearls.isChecked()) {
+                        ChocoMaltTotal = (getChocoMaltQty * ChocoMaltPrice) + 15;
+                    } else {
+                        ChocoMaltTotal = getChocoMaltQty * ChocoMaltPrice;
+                    }
+
                 }
-
-
+                bundle.putString("ChocoMaltAdded", String.valueOf(R.id.NoboButton_AddChocoMalt));
+                bundle.putInt("img_ChocoMalt", R.id.imageView_ChocoMalt);
                 bundle.putDouble("ChocoMaltTotal", ChocoMaltTotal);
                 bundle.putInt("ChocoMaltQty", getChocoMaltQty);
                 bundle.putDouble("ChocoMaltPrice", ChocoMaltPrice);
+                bundle.putBoolean("ChocoMaltChecked", checkBox_ChocoMaltPearls.isChecked());
 
                 int getJavaChipQty = number_picker_JavaChipValue.getValue();
                 double JavaChipPrice = Double.parseDouble(textView_JavaChipPrice.getText().toString());
@@ -143,13 +172,19 @@ public class SetOrders extends AppCompatActivity {
                 if (NoboButton_AddJavaFrappe.getText().toString().equalsIgnoreCase("Add")) {
                     JavaChipTotal = 0;
                 } else {
-                    JavaChipTotal = JavaChipPrice * getJavaChipQty;
+                    if (checkBox_JavaChipPearls.isChecked()) {
+                        JavaChipTotal = (getJavaChipQty * ChocoMaltPrice) + 15;
+                    } else {
+                        JavaChipTotal = JavaChipPrice * getJavaChipQty;
+                    }
+
                 }
-
-
+                bundle.putString("JavaChipAdded", String.valueOf(R.id.NoboButton_AddJavaFrappe));
+                bundle.putInt("img_JavaChip", R.id.imageView_JavaChip);
                 bundle.putDouble("JavaChipTotal", JavaChipTotal);
                 bundle.putInt("JavaChipQty", getJavaChipQty);
                 bundle.putDouble("JavaChipPrice", JavaChipPrice);
+                bundle.putBoolean("JavaChipChecked",checkBox_JavaChipPearls.isChecked());
 
                 int getGreenAppleQty = number_picker_GreenAppleValue.getValue();
                 double GreenApplePrice = Double.parseDouble(textView_GreenApplePrice.getText().toString());
@@ -159,13 +194,20 @@ public class SetOrders extends AppCompatActivity {
                 if (NoboButton_AddGreenApple.getText().toString().equalsIgnoreCase("Add")) {
                     GreenAppleTotal = 0;
                 } else {
-                    GreenAppleTotal = getGreenAppleQty * GreenApplePrice;
+                    if (checkBox_GreenApplePearls.isChecked()) {
+                        GreenAppleTotal = (getGreenAppleQty * GreenApplePrice) + 15;
+                    } else {
+                        GreenAppleTotal = getGreenAppleQty * GreenApplePrice;
+                    }
+
                 }
 
+                bundle.putString("GreenAppleAdded", String.valueOf(R.id.NoboButton_AddGreenApple));
+                bundle.putInt("img_GreenApple", R.id.imageView_GreenApple);
                 bundle.putDouble("GreenAppleTotal", GreenAppleTotal);
                 bundle.putInt("GreenAppleQty", getGreenAppleQty);
                 bundle.putDouble("GreenApplePrice", GreenApplePrice);
-
+                bundle.putBoolean("GreenAppleChecked", checkBox_GreenApplePearls.isChecked());
 
                 int getTaroQty = number_picker_TaroValue.getValue();
                 double TaroPrice = Double.parseDouble(textView_TaroPrice.getText().toString());
@@ -175,16 +217,22 @@ public class SetOrders extends AppCompatActivity {
                 if (NoboButton_AddTaro.getText().toString().equalsIgnoreCase("Add")) {
                     TaroTotal = 0;
                 } else {
-                    TaroTotal = getTaroQty * TaroPrice;
-                }
+                    if (checkBox_TaroPearls.isChecked()) {
+                        TaroTotal = (getTaroQty * TaroPrice) + 15;
+                    } else {
+                        TaroTotal = getTaroQty * TaroPrice;
+                    }
 
+                }
+                bundle.putString("TaroAdded", String.valueOf(R.id.NoboButton_AddTaro));
+                bundle.putInt("img_Taro", R.id.imageView_Taro);
                 bundle.putDouble("TaroTotal", TaroTotal);
                 bundle.putInt("TaroQty", getTaroQty);
                 bundle.putDouble("TaroPrice", TaroPrice);
+                bundle.putBoolean("TaroChecked", checkBox_TaroPearls.isChecked());
 
                 Intent intent = new Intent(getApplicationContext(), ListOrders.class);
                 intent.putExtras(bundle);
-
 
 
                 startActivity(intent);

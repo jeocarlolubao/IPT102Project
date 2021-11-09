@@ -10,9 +10,9 @@
         android:id="@+id/imageView"
         android:layout_width="205dp"
         android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/only_milktea" />
@@ -40,7 +40,7 @@
         app:nb_focusColor="#FFFFFF"
         app:nb_fontIcon="&#xf7a0;"
         app:nb_radius="30dp"
-        app:nb_text="Create an Order"
+        app:nb_text="Confirm Order"
         app:nb_textColor="#FFF">
 
     </com.ornach.nobobutton.NoboButton>

@@ -7,20 +7,28 @@
     tools:context=".SetOrders" >
 
 
+    <ImageView
+        android:id="@+id/imageView_ChocoMalt"
+        android:layout_width="103dp"
+        android:layout_height="95dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="19dp"
+        app:srcCompat="@drawable/chocomalt" />
+
     <com.ornach.nobobutton.NoboButton
         android:id="@+id/NoboButton_ReviewOrder"
-        android:layout_width="369dp"
-        android:layout_height="80dp"
+        android:layout_width="266dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/number_picker_ChocoMaltValue"
-        android:layout_alignBottom="@+id/textView6"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="500dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="508dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginRight="85dp"
+        android:layout_marginBottom="9dp"
         android:padding="10dp"
         app:nb_backgroundColor="#00aef0"
         app:nb_borderColor="#FFFFFF"
@@ -33,64 +41,6 @@
 
     </com.ornach.nobobutton.NoboButton>
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="103dp"
-        android:layout_height="95dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="56dp"
-        app:srcCompat="@drawable/chocomalt" />
-
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="125dp"
-        android:layout_height="28dp"
-        android:layout_below="@+id/textView5"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="129dp"
-        android:layout_marginLeft="129dp"
-        android:layout_marginTop="8dp"
-        android:text="Pearls" />
-
-    <CheckBox
-        android:id="@+id/checkBox6"
-        android:layout_width="125dp"
-        android:layout_height="28dp"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="125dp"
-        android:layout_marginLeft="125dp"
-        android:layout_marginTop="8dp"
-        android:text="Pearls" />
-
-    <com.shawnlin.numberpicker.NumberPicker
-        android:id="@+id/number_picker_TaroValue"
-        android:layout_width="108dp"
-        android:layout_height="52dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="416dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:visibility="invisible"
-        app:np_dividerColor="@color/black"
-        app:np_height="50dp"
-        app:np_max="12"
-        app:np_min="1"
-        app:np_orientation="horizontal"
-        app:np_selectedTextColor="@color/purple_500"
-        app:np_selectedTextSize="26dp"
-        app:np_textColor="#000000"
-        app:np_textSize="18dp"
-        app:np_value="0">
-
-    </com.shawnlin.numberpicker.NumberPicker>
-
     <com.shawnlin.numberpicker.NumberPicker
         android:id="@+id/number_picker_GreenAppleValue"
         android:layout_width="110dp"
@@ -99,9 +49,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="307dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
         android:visibility="invisible"
         app:np_dividerColor="@color/black"
         app:np_height="50dp"
@@ -124,9 +74,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="188dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginRight="22dp"
+        android:layout_marginTop="151dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
         android:visibility="invisible"
         app:np_dividerColor="@color/black"
         app:np_height="50dp"
@@ -149,9 +99,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
         android:visibility="invisible"
         app:np_dividerColor="@color/black"
         app:np_height="50dp"
@@ -167,12 +117,12 @@
     </com.shawnlin.numberpicker.NumberPicker>
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imageView_JavaChip"
         android:layout_width="103dp"
         android:layout_height="95dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="177dp"
+        android:layout_marginTop="140dp"
         app:srcCompat="@drawable/javachip" />
 
     <TextView
@@ -182,9 +132,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="126dp"
-        android:layout_marginLeft="126dp"
-        android:layout_marginTop="193dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginLeft="123dp"
+        android:layout_marginTop="156dp"
         android:text="Java Chip Frappe"
         android:textColor="#000000" />
 
@@ -196,9 +146,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="213dp"
         android:text="60.00"
         android:textColor="#000000"
         android:textSize="18sp" />
@@ -207,7 +157,7 @@
         android:id="@+id/NoboButton_AddJavaFrappe"
         android:layout_width="102dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox4"
+        android:layout_below="@+id/checkBox_JavaChipPearls"
         android:layout_alignEnd="@+id/number_picker_ChocoMaltValue"
         android:layout_alignRight="@+id/number_picker_ChocoMaltValue"
         android:layout_marginStart="40dp"
@@ -216,8 +166,8 @@
         android:layout_marginEnd="-7dp"
         android:layout_marginRight="-7dp"
         android:layout_marginBottom="-46dp"
-        android:layout_toEndOf="@+id/checkBox4"
-        android:layout_toRightOf="@+id/checkBox4"
+        android:layout_toEndOf="@+id/checkBox_JavaChipPearls"
+        android:layout_toRightOf="@+id/checkBox_JavaChipPearls"
         android:padding="10dp"
         app:nb_backgroundColor="#00aef0"
         app:nb_borderColor="#FFFFFF"
@@ -231,13 +181,14 @@
     </com.ornach.nobobutton.NoboButton>
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageView_GreenApple"
         android:layout_width="103dp"
         android:layout_height="95dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="248dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="364dp"
         app:srcCompat="@drawable/greenapple" />
 
     <com.ornach.nobobutton.NoboButton
@@ -249,8 +200,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="274dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginBottom="-61dp"
         android:padding="10dp"
         app:nb_backgroundColor="#00aef0"
@@ -272,9 +223,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="129dp"
-        android:layout_marginLeft="129dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginLeft="126dp"
+        android:layout_marginTop="283dp"
         android:text="Green Apple Fruit Tea"
         android:textColor="#000000" />
 
@@ -286,12 +237,48 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginLeft="19dp"
-        android:layout_marginTop="395dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="344dp"
         android:text="40.00"
         android:textColor="#000000"
         android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageView_Taro"
+        android:layout_width="98dp"
+        android:layout_height="91dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="417dp"
+        android:layout_marginBottom="223dp"
+        app:srcCompat="@drawable/taro" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/number_picker_TaroValue"
+        android:layout_width="108dp"
+        android:layout_height="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="415dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:visibility="invisible"
+        app:np_dividerColor="@color/black"
+        app:np_height="50dp"
+        app:np_max="12"
+        app:np_min="1"
+        app:np_orientation="horizontal"
+        app:np_selectedTextColor="@color/purple_500"
+        app:np_selectedTextSize="26dp"
+        app:np_textColor="#000000"
+        app:np_textSize="18dp"
+        app:np_value="0">
+
+    </com.shawnlin.numberpicker.NumberPicker>
 
     <TextView
         android:id="@+id/textView6"
@@ -301,35 +288,39 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="123dp"
-        android:layout_marginLeft="123dp"
-        android:layout_marginTop="442dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="413dp"
         android:text="Taro Rock Salt Cheese"
         android:textColor="#000000" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="92dp"
-        android:layout_height="104dp"
+    <TextView
+        android:id="@+id/textView_TaroPrice"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="435dp"
-        android:layout_marginBottom="118dp"
-        app:srcCompat="@drawable/taro" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="517dp"
+        android:text="30.00"
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
     <com.ornach.nobobutton.NoboButton
         android:id="@+id/NoboButton_AddTaro"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="102dp"
+        android:layout_height="43dp"
         android:layout_below="@+id/number_picker_ChocoMaltValue"
         android:layout_alignBottom="@+id/textView6"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="390dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="-41dp"
+        android:layout_marginTop="437dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="-78dp"
         android:padding="10dp"
         app:nb_backgroundColor="#00aef0"
         app:nb_borderColor="#FFFFFF"
@@ -342,20 +333,17 @@
 
     </com.ornach.nobobutton.NoboButton>
 
-    <TextView
-        android:id="@+id/textView_TaroPrice"
-        android:layout_width="103dp"
-        android:layout_height="wrap_content"
+    <CheckBox
+        android:id="@+id/checkBox_TaroPearls"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_below="@+id/textView6"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="509dp"
-        android:text="30.00"
-        android:textColor="#000000"
-        android:textSize="18sp" />
+        android:layout_marginStart="121dp"
+        android:layout_marginLeft="121dp"
+        android:layout_marginTop="41dp"
+        android:text="Pearls (add 15)" />
 
     <TextView
         android:id="@+id/textView_ChocoMaltPrice"
@@ -365,9 +353,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="126dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="89dp"
         android:text="50.00"
         android:textColor="#000000"
         android:textSize="18sp" />
@@ -381,8 +369,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
         android:layout_marginBottom="-56dp"
         android:padding="10dp"
         app:nb_backgroundColor="#00aef0"
@@ -397,28 +385,28 @@
     </com.ornach.nobobutton.NoboButton>
 
     <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="125dp"
-        android:layout_height="28dp"
+        android:id="@+id/checkBox_ChocoMaltPearls"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
         android:layout_below="@+id/textView3"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="125dp"
-        android:layout_marginLeft="125dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginLeft="122dp"
         android:layout_marginTop="6dp"
-        android:text="Pearls" />
+        android:text="Pearls (add 15)" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="125dp"
-        android:layout_height="28dp"
+        android:id="@+id/checkBox_JavaChipPearls"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
         android:layout_below="@+id/textView4"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="125dp"
-        android:layout_marginLeft="125dp"
-        android:layout_marginTop="5dp"
-        android:text="Pearls" />
+        android:layout_marginStart="122dp"
+        android:layout_marginLeft="122dp"
+        android:layout_marginTop="6dp"
+        android:text="Pearls (add 15)" />
 
     <TextView
         android:id="@+id/textView3"
@@ -428,10 +416,22 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="126dp"
-        android:layout_marginLeft="126dp"
-        android:layout_marginTop="57dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginLeft="123dp"
+        android:layout_marginTop="20dp"
         android:text="Chocomalt Cream Puff"
         android:textColor="#000000" />
+
+    <CheckBox
+        android:id="@+id/checkBox_GreenApplePearls"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginLeft="126dp"
+        android:layout_marginTop="8dp"
+        android:text="Pearls (add 15)" />
 
 </RelativeLayout>
