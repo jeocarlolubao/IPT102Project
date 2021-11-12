@@ -33,8 +33,8 @@ public class ListOrdersAdapter extends RecyclerView.Adapter<ListOrdersAdapter.Vi
         final ListOrdersData myListData = listdata[position];
         holder.foodName.setText(listdata[position].getFoodMenu_foodname());
         holder.foodPrice.setText(String.valueOf(listdata[position].getFoodMenu_foodprice()));
-        holder.foodImage.setImageResource(listdata[position].getImgID());
-        holder.itemQty.setText(listdata[position].getQuantity());
+//        holder.foodImage.setImageResource(listdata[position].getImgID());
+        holder.itemQty.setText(String.valueOf(listdata[position].getQuantity()));
         holder.itemhasPearls.setChecked(listdata[position].isItemHasPearls());
         holder.SubtotalValue.setText(String.valueOf(listdata[position].getSubtotalValue()));
     }

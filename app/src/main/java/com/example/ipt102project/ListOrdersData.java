@@ -12,9 +12,9 @@ public class ListOrdersData {
     private int quantity;
 
 
-    public ListOrdersData(String FoodMenu_foodname , int imgID, double FoodMenu_foodprice, double SubtotalValue, boolean itemHasPearls, int quantity){
+    public ListOrdersData(String FoodMenu_foodname, double FoodMenu_foodprice, double SubtotalValue, boolean itemHasPearls, int quantity){
         this.setFoodMenu_foodname(FoodMenu_foodname);
-        this.setImgID(imgID);
+//        this.setImgID(imgID);
         this.setFoodMenu_foodprice(FoodMenu_foodprice);
         this.setSubtotalValue(SubtotalValue);
         this.setItemHasPearls(itemHasPearls);
@@ -30,13 +30,13 @@ public class ListOrdersData {
         FoodMenu_foodname = foodMenu_foodname;
     }
 
-    public int getImgID() {
-        return imgID;
-    }
-
-    public void setImgID(int imgID) {
-        this.imgID = imgID;
-    }
+//    public int getImgID() {
+//        return imgID;
+//    }
+//
+//    public void setImgID(int imgID) {
+//        this.imgID = imgID;
+//    }
 
     public double getFoodMenu_foodprice() {
         return FoodMenu_foodprice;

@@ -6,8 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import com.shawnlin.numberpicker.NumberPicker;
+
+import org.w3c.dom.Text;
 
 public class ListOrders extends AppCompatActivity {
+
+    TextView textView_TotalValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,23 +26,32 @@ public class ListOrders extends AppCompatActivity {
 
         String ChocoMaltAdded, JavaChipAdded, GreenAppleAdded, TaroAdded;
         double ChocoMaltTotal, JavaChipTotal, GreenAppleTotal, TaroTotal;
-        boolean ChocoMaltChecked;
-        int ChocoMaltQty;
+        boolean ChocoMaltChecked, JavaChipChecked, GreenAppleChecked, TaroChecked;
+        int ChocoMaltQty, JavaChipQty, GreenAppleQty, TaroQty;
 
-        int ChocoMaltImg;
+//        int ChocoMaltImg;
 
         ChocoMaltAdded = getIntent().getExtras().getString("ChocoMaltAdded");
-        JavaChipAdded = getIntent().getExtras().getString("JavaChipAdded");
-        GreenAppleAdded = getIntent().getExtras().getString("GreenAppleAdded");
-        TaroAdded = getIntent().getExtras().getString("TaroAdded");
-
-        ChocoMaltTotal = getIntent().getExtras().getDouble("TaroTotal");
-
+        ChocoMaltTotal = getIntent().getExtras().getDouble("ChocoMaltTotal");
         ChocoMaltChecked = getIntent().getExtras().getBoolean("ChocoMaltChecked");
-
         ChocoMaltQty = getIntent().getExtras().getInt("ChocoMaltQty");
 
-        ChocoMaltImg = getIntent().getExtras().getInt("img_ChocoMalt");
+        JavaChipAdded = getIntent().getExtras().getString("JavaChipAdded");
+        JavaChipTotal = getIntent().getExtras().getDouble("JavaChipTotal");
+        JavaChipChecked = getIntent().getExtras().getBoolean("JavaChipChecked");
+        JavaChipQty = getIntent().getExtras().getInt("JavaChipQty");
+
+        GreenAppleAdded = getIntent().getExtras().getString("GreenAppleAdded");
+        GreenAppleTotal = getIntent().getExtras().getDouble("GreenAppleTotal");
+        GreenAppleChecked = getIntent().getExtras().getBoolean("GreenAppleChecked");
+        GreenAppleQty = getIntent().getExtras().getInt("GreenAppleQty");
+
+        TaroAdded = getIntent().getExtras().getString("TaroAdded");
+        TaroTotal = getIntent().getExtras().getDouble("TaroTotal");
+        TaroChecked = getIntent().getExtras().getBoolean("TaroChecked");
+        TaroQty = getIntent().getExtras().getInt("TaroQty");
+
+//        ChocoMaltImg = getIntent().getExtras().getInt("img_ChocoMalt");
 
 //        ListOrdersData(String FoodMenu_foodname, int imgID, double FoodMenu_foodprice, double SubtotalValue, boolean itemHasPearls, int quantity);
 
@@ -43,24 +59,39 @@ public class ListOrders extends AppCompatActivity {
             ListOrdersData[] myListData = new ListOrdersData[]{
                     new ListOrdersData(
                             "Chocomalt Cream Puff",
-                            ChocoMaltImg,
                             50.00,
                             ChocoMaltTotal,
-                            ChocoMaltChecked, ChocoMaltQty)
-
+                            ChocoMaltChecked, ChocoMaltQty),
+                    new ListOrdersData(
+                            "Java Chip Frappe",
+                            60.00,
+                            JavaChipTotal,
+                            JavaChipChecked, JavaChipQty),
+                    new ListOrdersData(
+                            "Green Apple Fruit Tea",
+                            40.00,
+                            GreenAppleTotal,
+                            GreenAppleChecked, GreenAppleQty),
+                    new ListOrdersData(
+                            "Taro Rock Salt Cheese",
+                            30.00,
+                            TaroTotal,
+                            TaroChecked, TaroQty)
             };
-
-//            new ListOrdersData("Chocomalt Cream Puff", R.id.imageView_ChocoMalt, 50.00, ChocoMaltTotal, ChocoMaltChecked, ChocoMaltQty)
-
-
-
-
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerView_FoodMenu);
         ListOrdersAdapter adapter = new ListOrdersAdapter(myListData);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        textView_TotalValue = findViewById(R.id.textView_TotalValue);
+
+        double Ordertotal = ChocoMaltTotal + JavaChipTotal + GreenAppleTotal + TaroTotal;
+
+        textView_TotalValue.setText(Double.toString(Ordertotal));
+
+
     }
 }
 

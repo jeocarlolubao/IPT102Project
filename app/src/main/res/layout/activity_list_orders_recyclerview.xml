@@ -15,18 +15,19 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
+        android:visibility="invisible"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textView_FoodName"
-        android:layout_width="148dp"
+        android:layout_width="239dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginLeft="102dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="24dp"
         android:text="Food1"
         android:textColor="#000000"
         android:textSize="18sp" />
@@ -39,9 +40,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="267dp"
-        android:layout_marginLeft="267dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="23dp"
         android:text="Subtotal"
         android:textColor="#000000"
         android:textSize="18sp" />
@@ -54,10 +55,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="61dp"
-        android:text="Qty:"
+        android:text="Quantity:"
         android:textColor="#000000"
         android:textSize="18sp" />
 
@@ -69,9 +70,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="141dp"
-        android:layout_marginLeft="141dp"
-        android:layout_marginTop="61dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="63dp"
         android:text="[0]"
         android:textColor="#000000"
         android:textSize="18sp" />
@@ -84,9 +85,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="266dp"
-        android:layout_marginLeft="266dp"
-        android:layout_marginTop="103dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginLeft="248dp"
+        android:layout_marginTop="66dp"
         android:text="[0]"
         android:textColor="#000000"
         android:textSize="18sp" />
@@ -102,7 +103,8 @@
         android:layout_marginLeft="13dp"
         android:layout_marginTop="86dp"
         android:text="P100"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:visibility="invisible" />
 
     <CheckBox
         android:id="@+id/checkBox_itemhasPearls"
@@ -111,9 +113,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="103dp"
-        android:layout_marginLeft="103dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginBottom="26dp"
+        android:enabled="false"
         android:text="Pearl" />
 
 
