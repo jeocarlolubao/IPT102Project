@@ -69,7 +69,7 @@
         android:layout_marginTop="16dp"
         android:text="TOTAL:"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RecyclerView_FoodMenu" />
 
@@ -77,12 +77,12 @@
         android:id="@+id/textView_TotalValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
         android:layout_marginTop="16dp"
         android:text="P[0]"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RecyclerView_FoodMenu" />
 
